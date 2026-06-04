@@ -1321,14 +1321,25 @@ a {
    =============== */
 
 #main-content {
-  flex: 1; /*esticar o maincontent até o fim da página,bota o footer no final */
+ min-height: 100vh; 
 }
 
 /* --- TABLET */
 @media (min-width: 361px) and (max-width: 768px) {
   .formulario-inputs input { 
     width: 100%;
-    font-size: clamp(18px, 1.5vw, 16px);  
+    font-size: 1rem;  
+    padding: 1% 0; 
+  }
+  .porcentagem {
+    font-size: 2rem; /* rem ~=16px */
+  }
+  .texto-off {
+    font-size: 1rem;
+  }
+  .formulario-inputs input { 
+    width: 100%;
+    font-size: 1rem;  
     padding: 1% 0; 
   }
 }
@@ -1336,17 +1347,17 @@ a {
 /* --- MOBILE  --- */
 @media (max-width: 360px) {
   .porcentagem {
-    font-size: 1rem; /* rem ~=16px */
+    font-size: 0.80rem; 
   }
   .texto-off {
     font-size: 0.7rem;
   }
   .formulario-inputs {
-    width: 20%; 
+    width: 30%; 
   }
   .formulario-inputs input { 
     width: 100%;
-    font-size: clamp(11px, 1.5vw, 16px);  
+    font-size: 0.5rem;  
     padding: 1% 0; 
   }
   .carta-container {
