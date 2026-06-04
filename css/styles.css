@@ -1321,7 +1321,7 @@ a {
    =============== */
 
 #main-content {
-  flex: 1; /*esticar o maincontent até o fim da página,bota o footer no final */
+ min-height: 100vh; 
 }
 
 /* --- TABLET */
@@ -1329,6 +1329,17 @@ a {
   .formulario-inputs input { 
     width: 100%;
     font-size: 0.85rem;  
+    padding: 1% 0; 
+  }
+  .porcentagem {
+    font-size: 1rem; /* rem ~=16px */
+  }
+  .texto-off {
+    font-size: 0.7rem;
+  }
+  .formulario-inputs input { 
+    width: 100%;
+    font-size: 0.5rem;  
     padding: 1% 0; 
   }
 }
