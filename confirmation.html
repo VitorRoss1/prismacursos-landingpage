@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="PrismaCursos - Plataforma de cursos online">
   <title>PrismaCursos</title>
+
+  <!-- Google Fonts: League Spartan + DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=League+Spartan:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -13,14 +21,61 @@
   <!-- ============ HEADER ============ -->
   <header id="header">
     <nav id="navbar">
-      <a href="#" class="logo">PrismaCursos</a>
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Cursos</a></li>
-        <li><a href="#">Sobre</a></li>
-        <li><a href="#">Contato</a></li>
-      </ul>
+      <!-- Logo + Nome à esquerda -->
+      <a href="index.html" class="logo" id="logo-link">
+        <img src="assets/PrismaLogo.png" alt="Prisma Logo" class="logo-img" id="logo-img">
+        <span class="logo-text">PRISMA CURSOS</span>
+      </a>
+
+      <!-- Hamburger Menu à direita -->
+      <button class="hamburger" id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
     </nav>
+
+    <!-- Overlay do menu -->
+    <div class="menu-overlay" id="menu-overlay">
+      <ul class="menu-list" id="menu-list">
+        <li class="menu-item">
+          <a href="index.html#prisma" class="menu-link" id="menu-link-prisma">
+            <span class="menu-icon">▲</span>
+            <span class="menu-label">PRISMA</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="index.html#quem-somos" class="menu-link" id="menu-link-quem-somos">
+            <span class="menu-icon">▲</span>
+            <span class="menu-label">QUEM SOMOS</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="index.html#cursos" class="menu-link" id="menu-link-cursos">
+            <span class="menu-icon">▲</span>
+            <span class="menu-label">CURSOS</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="index.html#quiz" class="menu-link" id="menu-link-quiz">
+            <span class="menu-icon">▲</span>
+            <span class="menu-label">QUIZ</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="index.html#depoimento" class="menu-link" id="menu-link-depoimento">
+            <span class="menu-icon">▲</span>
+            <span class="menu-label">DEPOIMENTOS</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="index.html#contato" class="menu-link" id="menu-link-contato">
+            <span class="menu-icon">▲</span>
+            <span class="menu-label">CONTATO</span>
+          </a>
+        </li>
+      </ul>
+    </div>
   </header>
 
 
@@ -75,7 +130,10 @@
 
   <!-- ============ FOOTER ============ -->
   <footer id="footer">
-    <p>&copy; 2026 PrismaCursos &mdash; Todos os direitos reservados.</p>
+    <div class="footer-logo">
+      <img src="assets/PrismaLogo.png" alt="Prisma Logo" class="footer-logo-img">
+      <span class="footer-logo-text">PRISMA CURSOS</span>
+    </div>
   </footer>
 
   <script src="js/main.js"></script>
