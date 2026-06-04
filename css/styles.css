@@ -56,9 +56,7 @@ a {
   transition: color 0.3s ease;
 }
 
-a:hover {
-  color: var(--cor-destaque);
-}
+
 
 /* ---------- Header / Navbar ---------- */
 #header {
@@ -224,10 +222,6 @@ a:hover {
   gap: 32px;
 }
 
-.menu-link:hover {
-  color: var(--cor-destaque);
-}
-
 .menu-icon {
   width: 42px;
   height: 42px;
@@ -241,20 +235,12 @@ a:hover {
   line-height: 42px;
 }
 
-.menu-link:hover .menu-icon {
-  color: var(--cor-destaque);
-}
-
 .menu-label {
   font-family: var(--fonte-corpo);
   font-weight: 400;
   font-size: 32px;
   line-height: 42px;
   color: #ffffff;
-}
-
-.menu-link:hover .menu-label {
-  color: var(--cor-destaque);
 }
 
 /* ---------- Responsividade Header ---------- */
@@ -677,29 +663,13 @@ a:hover {
 #apresentacao {
   position: relative; /* to allow absolute positioned lateral bars */
   background-color: #121212; /* matching figma design background */
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: var(--espacamento-xl) var(--espacamento-lg);
+  padding: 80px 24px;
   overflow: hidden; /* prevents lateral bars from sticking out */
-}
-
-#apresentacao h1 {
-  font-family: 'Comfortaa', cursive, sans-serif;
-  font-size: 2.2rem;
-  margin-bottom: var(--espacamento-md);
-  text-align: center;
-}
-
-#apresentacao p {
-  font-family: 'Lato', sans-serif;
-  font-size: 1.2rem;
-  color: var(--cor-texto-claro);
-  max-width: 900px;
-  margin-bottom: var(--espacamento-lg);
-  line-height: 1.8;
 }
 
 /* Barras laterais decorativas */
@@ -720,90 +690,394 @@ a:hover {
   width: 5px;
 }
 
-/*Texto colorido para títulos(h1)*/
+/* Texto colorido para títulos */
 .texto-colorido {
-  font-size: 2.2rem;
   background: linear-gradient(to right, #FF0000, #FFFF07, #2BFF00, #1A38FF, #850099);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: 'Comfortaa', cursive, sans-serif;
 }
-/*Cards das trilhas profissionais - apresentação*/
 
-.container {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 100px 50px;
-}
-.container .card {
-  top: 50px;
-  position: relative;
-  height: 70px;
-  width: 300px;
-  box-shadow: 0 35px 80px rgba(0,0,0,.15);
-  background: #000000;
-  border-radius: 20px;
-  transition: .5s;
-  border: solid 2px #e0e0e0;
-  overflow: hidden;
-}
-.container .card h2 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 1.5rem;
-  color: #ffffff;
-}
-.container .card:hover {
-  background: linear-gradient(180deg, #000000,#000000,#0a1fa4);
-  height: 450px;
-  transition: .5s;
-  border: solid 2px #e0e0e0;
-}
-.container .card .trilha {
-  top: 10px;
-  position: absolute;
-  width: 300px;
-  height: 70px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.container .card .conteudo {
-  position: absolute;
+/* Wrapper principal de Apresentação */
+.apresentacao-wrapper {
   width: 100%;
-  top: 70px;
-  overflow: hidden;
-  padding: var(--espacamento-md);
+  max-width: 1176px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: var(--espacamento-md);
+  gap: 80px;
   align-items: center;
+  z-index: 2;
 }
-.container .card .conteudo p {
+
+/* Parte 1: Introdução */
+.apresentacao-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+.apresentacao-titulo {
+  font-family: 'Comfortaa', cursive, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 36px;
+  color: #FFFFFF;
+  max-width: 852px;
+  margin: 0 auto;
+}
+
+.apresentacao-descricao {
   font-family: 'Lato', sans-serif;
-  font-size: 0.95rem;
-  color: var(--cor-texto-claro);
-  line-height: 1.5;
+  font-size: 24px;
+  color: #FFFFFF;
+  line-height: 29px;
   text-align: justify;
   margin: 0;
 }
-.container .card .conteudo a {
+
+/* Parte 1: Trilhas */
+.apresentacao-trilhas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 45px;
+  width: 100%;
+}
+
+.trilhas-titulo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 39px;
+  color: #FFFDFD;
+  max-width: 899px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.trilhas-botoes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 66px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.trilha-botao {
+  width: 300px;
+  height: 71px;
+  background-color: #000000;
+  border: 2px solid #FFFFFF;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+/* Tecnologia Hover - RED (R) */
+.trilha-botao.tecnologia:hover, .trilha-botao.tecnologia:active {
+  height: 420px;
+  transform: translateY(-4px);
+  background: linear-gradient(180deg, #000000, #000000, #801010);
+  box-shadow: 0 10px 30px rgba(255, 63, 63, 0.4);
+  border-color: #ff3f3f;
+}
+
+/* Design Hover - GREEN (G) */
+.trilha-botao.design:hover, .trilha-botao.design:active {
+  height: 420px;
+  transform: translateY(-4px);
+  background: linear-gradient(180deg, #000000, #000000, #106010);
+  box-shadow: 0 10px 30px rgba(63, 255, 63, 0.4);
+  border-color: #3fff3f;
+}
+
+/* Gestão Hover - BLUE (B) */
+.trilha-botao.gestao:hover, .trilha-botao.gestao:active {
+  height: 420px;
+  transform: translateY(-4px);
+  background: linear-gradient(180deg, #000000, #000000, #101080);
+  box-shadow: 0 10px 30px rgba(63, 63, 255, 0.4);
+  border-color: #3f3fff;
+}
+
+.trilha-botao-cabecalho {
+  height: 67px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.trilha-botao span {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 32px;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 42px;
+  user-select: none;
+}
+
+.trilha-botao-conteudo {
+  padding: 10px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.trilha-botao:hover .trilha-botao-conteudo {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.15s;
+}
+
+.trilha-botao-conteudo p {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  color: #b0b0b0;
+  line-height: 1.4;
+  text-align: justify;
+  margin: 0;
+}
+
+.trilha-botao-link {
   font-family: 'DM Sans', sans-serif;
   font-weight: 700;
-  background-color: var(--cor-primaria);
+  font-size: 14px;
   color: #ffffff;
-  padding: 0.5rem 1rem;
+  padding: 8px 16px;
   border-radius: 8px;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-.container .card .conteudo a:hover {
-  background-color: var(--cor-destaque);
+
+/* Botão do card Tecnologia (Red) */
+.tecnologia .trilha-botao-link {
+  background-color: #d63031;
+}
+.tecnologia .trilha-botao-link:hover {
+  background-color: #ff4757;
+  transform: scale(1.05);
+}
+
+/* Botão do card Design (Green) */
+.design .trilha-botao-link {
+  background-color: #00b894;
+}
+.design .trilha-botao-link:hover {
+  background-color: #2ed573;
+  transform: scale(1.05);
+}
+
+/* Botão do card Gestão (Blue) */
+.gestao .trilha-botao-link {
+  background-color: #0984e3;
+}
+.gestao .trilha-botao-link:hover {
+  background-color: #1e90ff;
+  transform: scale(1.05);
+}
+
+.cta-cursos-btn {
+  width: 335px;
+  height: 87px;
+  background: conic-gradient(from 45deg, #FF0000, #FFFF07, #2BFF00, #1A38FF, #850099, #FF0000);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 36px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  -webkit-text-stroke: 0.8px #000000;
+  text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}
+
+.cta-cursos-btn:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+}
+
+/* Parte 2: Modelo de Ensino */
+.modelo-ensino {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+}
+
+.modelo-titulo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 39px;
+  color: #FFFDFD;
+  max-width: 955px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.modelo-subtitulo {
+  font-family: 'Lato', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29px;
+  color: #FFFFFF;
+  text-align: justify;
+  max-width: 1043px;
+  margin: 0 auto 15px auto;
+}
+
+.modelo-conteudo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 88px;
+  width: 100%;
+  max-width: 922px;
+  margin: 0 auto;
+}
+
+.modelo-bloco {
+  flex: 1;
+  font-family: 'Lato', sans-serif;
+  font-size: 24px;
+  color: #FFFFFF;
+  line-height: 29px;
+  text-align: justify;
+}
+
+.destaque-modelo {
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* Responsividade da Apresentação */
+@media (max-width: 1024px) {
+  .apresentacao-wrapper {
+    gap: 60px;
+  }
+  
+  .trilhas-botoes {
+    gap: 30px;
+  }
+  
+  .modelo-conteudo {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  #apresentacao {
+    padding: 60px 16px;
+  }
+
+  .apresentacao-wrapper {
+    gap: 45px;
+  }
+
+  .apresentacao-intro {
+    gap: 25px;
+  }
+
+  .apresentacao-titulo {
+    font-size: 24px;
+  }
+
+  .apresentacao-descricao {
+    font-size: 18px;
+    text-align: left;
+  }
+
+  .apresentacao-trilhas {
+    gap: 30px;
+  }
+
+  .trilhas-titulo {
+    font-size: 24px;
+  }
+
+  .trilhas-botoes {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .trilha-botao {
+    width: 100%;
+    max-width: 320px;
+    height: 60px;
+  }
+
+  .trilha-botao:hover, .trilha-botao:active {
+    height: 480px;
+  }
+
+  .trilha-botao-cabecalho {
+    height: 56px;
+  }
+
+  .trilha-botao span {
+    font-size: 24px;
+  }
+
+  .cta-cursos-btn {
+    width: 100%;
+    max-width: 320px;
+    height: 75px;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .modelo-ensino {
+    gap: 20px;
+  }
+
+  .modelo-titulo {
+    font-size: 24px;
+  }
+
+  .modelo-subtitulo {
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+
+  .modelo-conteudo {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .modelo-bloco {
+    font-size: 18px;
+    text-align: left;
+  }
 }
 
 #contato {
