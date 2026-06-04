@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=DM+Sans:wght@400;500;700;800&family=Inter:wght@400;500;700&family=Lato:wght@400;700&family=League+Spartan:wght@400;500;700&family=Montserrat:wght@400;700;800&display=swap');
+
 /* ========================================
    PrismaCursos — Estilos principais
    ========================================
@@ -119,24 +121,59 @@ a:hover {
 
 /* ---------- Apresentação ---------- */
 #apresentacao {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-text-align: center;
-padding: var(--espacamento-xl) var(--espacamento-lg);
-flex: 1;
+  position: relative; /* to allow absolute positioned lateral bars */
+  background-color: #121212; /* matching figma design background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--espacamento-xl) var(--espacamento-lg);
+  overflow: hidden; /* prevents lateral bars from sticking out */
 }
+
 #apresentacao h1 {
-  text-align: left;
+  font-family: 'Comfortaa', cursive, sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: var(--espacamento-md);
+  text-align: center;
 }
+
+#apresentacao p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.2rem;
+  color: var(--cor-texto-claro);
+  max-width: 900px;
+  margin-bottom: var(--espacamento-lg);
+  line-height: 1.8;
+}
+
+/* Barras laterais decorativas */
+.barra-lateral {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: linear-gradient(180deg, #FF0000 17%, #FFFF07 40%, #2BFF00 44%, #1A38FF 65%, #850099 100%);
+  border-radius: 90px;
+  z-index: 10;
+}
+.barra-lateral.esquerda {
+  left: 0;
+  width: 4px;
+}
+.barra-lateral.direita {
+  right: 0;
+  width: 5px;
+}
+
 /*Texto colorido para títulos(h1)*/
-.texto-colorido{
-  font-size: 2.1rem;
-  background: linear-gradient(to right,#FF0000,#FFFF07,#2BFF00,#1A38FF,#850099);
+.texto-colorido {
+  font-size: 2.2rem;
+  background: linear-gradient(to right, #FF0000, #FFFF07, #2BFF00, #1A38FF, #850099);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-family: 'Comfortaa', cursive, sans-serif;
 }
 /*Cards das trilhas profissionais - apresentação*/
 
@@ -153,7 +190,7 @@ flex: 1;
 .container .card {
   top: 50px;
   position: relative;
-  height:70px;
+  height: 70px;
   width: 300px;
   box-shadow: 0 35px 80px rgba(0,0,0,.15);
   background: #000000;
@@ -161,6 +198,11 @@ flex: 1;
   transition: .5s;
   border: solid 2px #e0e0e0;
   overflow: hidden;
+}
+.container .card h2 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.5rem;
+  color: #ffffff;
 }
 .container .card:hover {
   background: linear-gradient(180deg, #000000,#000000,#0a1fa4);
@@ -174,17 +216,45 @@ flex: 1;
   width: 300px;
   height: 70px;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .container .card .conteudo {
   position: absolute;
   width: 100%;
   top: 70px;
   overflow: hidden;
+  padding: var(--espacamento-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacamento-md);
+  align-items: center;
+}
+.container .card .conteudo p {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.95rem;
+  color: var(--cor-texto-claro);
+  line-height: 1.5;
+  text-align: justify;
+  margin: 0;
+}
+.container .card .conteudo a {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  background-color: var(--cor-primaria);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+.container .card .conteudo a:hover {
+  background-color: var(--cor-destaque);
 }
 
 #contato {
   background-color: var(--cor-fundo);
-  padding: 20px;
+  padding: 40px 20px;
 }
 
 /* --- CABEÇALHO DA OFERTA --- */
@@ -196,12 +266,37 @@ flex: 1;
   gap: 15px; 
   margin-bottom: 30px;
 }
+.cabecalho-oferta h1 {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: var(--cor-texto);
+}
+.cabecalho-oferta h3 {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--cor-texto-claro);
+}
+
 .cabecalho-confirmation {
   display: flex;
   flex-direction: column; 
   text-align: center;     
   gap: 15px; 
   margin-bottom: 30px; 
+}
+.cabecalho-confirmation h1 {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: var(--cor-texto);
+}
+.cabecalho-confirmation h3 {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--cor-texto-claro);
 }
 
 /* ---------- DESCONTOS  ---------- */
@@ -235,23 +330,24 @@ flex: 1;
   transition: background-color 2s ease; /* Transição de estilos */
 
 }
-/* --- AS SUAS 4 VARIANTES DE COR 
-(classe desconto-x, evitar repetições de estrutura => separa uma classe pra estrutura outra pra estilo) --- */
-.desconto-5 { background-color: var(--cor-destaque); }  
-.desconto-10 { background-color: blue; } 
-.desconto-15 { background-color: green } 
-.desconto-20 { background-color:red } 
+/* --- AS SUAS 4 VARIANTES DE COR --- */
+.desconto-5 { background-color: #fd79a8; }  
+.desconto-10 { background-color: #6c5ce7; } 
+.desconto-15 { background-color: #00b894; } 
+.desconto-20 { background-color: #d63031; } 
 
 .porcentagem {
-  /* Usar unidades relativas como 'em' ou 'cqi' pode ser bom no futuro,mas um tamanho fixo flexível já resolve para começar */
+  font-family: 'Inter', sans-serif;
   font-size: 1.6rem; /* rem ~=16px */
   font-weight: bold;
   line-height: 1;
 }
 .texto-off {
+  font-family: 'Inter', sans-serif;
   font-size: 1rem;
   text-transform: uppercase;
   margin-top: 2px;
+  font-weight: bold;
 }
 
 
@@ -287,6 +383,7 @@ flex: 1;
   color: var(--cor-secundaria);
   font-size: clamp(6px, 18px, 20px);  /*clamp(MÍNIMO, VALOR_IDEAL, MÁXIMO) */
   padding: 1% 0; 
+  font-family: 'DM Sans', sans-serif;
 }
 .formulario-inputs input:focus { /* Remove a borda feia de foco */
   outline: none;
@@ -341,6 +438,7 @@ flex: 1;
 }
 /* --- ESTILO DO TEXTO --- */
 .item-contato span {
+  font-family: 'Lato', sans-serif;
   font-size: 1rem; 
   color: var(--cor-texto-claro); 
   font-weight: 500;
