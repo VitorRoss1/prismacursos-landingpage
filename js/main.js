@@ -83,29 +83,38 @@ function atualizarVisualDoDesconto() {
 
 
 // Cliques em Cursos,Sobre,Contato:
-document.getElementById('link-cursos').addEventListener('click', function() { 
-  if (clicouCursos === false) { //só adiciona 1vez
-    descontoAtual += 5; 
-    clicouCursos = true;               
-    atualizarVisualDoDesconto();   // Roda a função que muda a tela
-  }
-});
+const linkCursos = document.getElementById('menu-link-cursos') || document.getElementById('link-cursos');
+if (linkCursos) {
+  linkCursos.addEventListener('click', function() { 
+    if (clicouCursos === false) { //só adiciona 1vez
+      descontoAtual += 5; 
+      clicouCursos = true;               
+      atualizarVisualDoDesconto();   // Roda a função que muda a tela
+    }
+  });
+}
 
-document.getElementById('link-sobre').addEventListener('click', function() {
-  if (clicouSobre === false) {
-    descontoAtual += 5; 
-    clicouSobre = true;
-    atualizarVisualDoDesconto();
-  }
-});
+const linkSobre = document.getElementById('menu-link-quem-somos') || document.getElementById('link-sobre');
+if (linkSobre) {
+  linkSobre.addEventListener('click', function() {
+    if (clicouSobre === false) {
+      descontoAtual += 5; 
+      clicouSobre = true;
+      atualizarVisualDoDesconto();
+    }
+  });
+}
 
-document.getElementById('link-contato').addEventListener('click', function() {
-  if (clicouContato === false) {
-    descontoAtual += 5;
-    clicouContato = true;
-    atualizarVisualDoDesconto();
-  }
-});
+const linkContato = document.getElementById('menu-link-contato') || document.getElementById('link-contato');
+if (linkContato) {
+  linkContato.addEventListener('click', function() {
+    if (clicouContato === false) {
+      descontoAtual += 5;
+      clicouContato = true;
+      atualizarVisualDoDesconto();
+    }
+  });
+}
 
 
 // --------- VERIFICACOES DE INPUT ---------
