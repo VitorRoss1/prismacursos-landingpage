@@ -322,49 +322,7 @@ a:hover {
   padding: 60px 20px 80px;
 }
 
-/* --- Barras laterais decorativas --- */
-.quiz-bar {
-  position: absolute;
-  top: 0;
-  width: 4px;
-  height: 100%;
-  border-radius: 90px;
-  z-index: 1;
-}
 
-.quiz-bar::before,
-.quiz-bar::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 90px;
-}
-
-.quiz-bar::before {
-  background-color: rgba(255, 255, 255, 0.08);
-}
-
-.quiz-bar::after {
-  background: linear-gradient(
-    180deg,
-    #FF0000 17%,
-    #FFFF07 40%,
-    #2BFF00 44%,
-    #1A38FF 65%,
-    #850099 100%
-  );
-}
-
-.quiz-bar--left {
-  left: 0;
-}
-
-.quiz-bar--right {
-  right: 0;
-}
 
 /* --- Quiz Step (cada tela de pergunta) --- */
 .quiz-step {

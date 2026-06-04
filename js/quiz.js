@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const resultImage = document.getElementById("quiz-result-image");
   const globalProgress = document.getElementById("quiz-global-progress");
   const progressFill = document.getElementById("quiz-progress-fill");
+  const restartBtn = document.getElementById("quiz-restart-btn");
 
   // Armazena respostas
   const answers = {};
