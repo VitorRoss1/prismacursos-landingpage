@@ -327,7 +327,8 @@ a {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 60px 20px 80px;
+  padding: 31px 19px 90px;
+  gap: 48px;
 }
 
 
@@ -379,11 +380,11 @@ a {
 /* --- Pergunta --- */
 .quiz-question {
   font-family: var(--fonte-corpo);
-  font-size: 1.75rem;
+  font-size: clamp(24px, 7.5vw, 32px);
   font-weight: 700;
   color: #EFEFEF;
   text-align: center;
-  line-height: 1.35;
+  line-height: 42px;
   max-width: 342px;
   order: 1;
 }
@@ -397,7 +398,7 @@ a {
   border-radius: 90px;
   overflow: hidden;
   order: 2;
-  margin: 20px auto;
+  margin: 0 auto;
   transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 .quiz-progress__track {
@@ -436,11 +437,15 @@ a {
   );
 }
 
+#quiz-global-progress[data-step="3"] .quiz-progress__track {
+  background-color: #FFFFFF;
+}
+
 /* --- Opções de resposta (grupo) --- */
 .quiz-options {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 48px;
   width: 100%;
   max-width: 364px;
   align-items: center;
@@ -454,13 +459,14 @@ a {
   justify-content: center;
   width: 100%;
   max-width: 364px;
-  height: 80px;
+  height: 100px;
   background-color: #121212;
   color: #FDFDFD;
   font-family: var(--fonte-corpo);
-  font-size: clamp(1.5rem, 5vw, 2.25rem);
+  font-size: clamp(26px, 10vw, 48px);
   font-weight: 700;
   text-align: center;
+  line-height: 62px;
   border: none;
   border-radius: 180px;
   box-shadow: 0px 4px 12px 0px rgba(239, 239, 239, 0.12);
@@ -495,20 +501,23 @@ a {
 
 /* --- Resultado --- */
 .quiz-result {
-  gap: 32px;
+  gap: 48px;
 }
 
 .quiz-result__text {
   max-width: 342px;
+  order: 1;
 }
 
 .quiz-result__image-wrapper {
   width: 100%;
   max-width: 342px;
-  border-radius: 40px;
+  height: 228px;
+  border-radius: 90px;
   overflow: hidden;
   box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
   animation: quizImageFloat 3s ease-in-out infinite alternate;
+  order: 2;
 }
 
 @keyframes quizImageFloat {
@@ -523,12 +532,17 @@ a {
 .quiz-result__image {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 }
 
 .quiz-result__arrow {
+  order: 3;
   animation: quizArrowBounce 1.5s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 103px;
 }
 
 @keyframes quizArrowBounce {
@@ -554,30 +568,6 @@ a {
   background-color: rgba(239, 239, 239, 0.06);
   border-color: rgba(239, 239, 239, 0.5);
   box-shadow: 0px 4px 16px 0px rgba(239, 239, 239, 0.1);
-}
-
-/* --- Responsividade Quiz --- */
-@media (max-width: 480px) {
-  .quiz-section {
-    padding: 40px 12px 60px;
-  }
-
-  .quiz-question {
-    font-size: 1.4rem;
-  }
-
-  .quiz-btn {
-    height: 70px;
-    font-size: 1.4rem;
-  }
-
-  .quiz-progress {
-    height: 22px;
-  }
-
-  .quiz-result__image-wrapper {
-    border-radius: 28px;
-  }
 }
 
 /* ===========================================
@@ -1289,6 +1279,12 @@ a {
   display: flex;
   flex-direction: column; 
   width: 30%; 
+  max-height: 35%;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+}
+.formulario-inputs::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 .formulario-inputs input { /*ESTILO DOS INPUTS */
@@ -1314,7 +1310,7 @@ a {
   justify-content: center;
   align-items: center;
   width: 14%; /* Largura e alturar iguais para formar uma esfera */
-  height: 14%;
+  aspect-ratio: 1 / 1;
   border-radius: 50%; /* Transforma o quadrado em círculo */
   position: absolute; 
   top: 65%; 
@@ -1415,36 +1411,22 @@ a {
  min-height: 100vh; 
 }
 
-/* --- TABLET */
-@media (min-width: 361px) and (max-width: 768px) {
-  .formulario-inputs input { 
-    width: 100%;
-    font-size: 1rem;  
-    padding: 1% 0; 
+/* --- TABLET E MOBILE (CONTATO & FORMULÁRIO) --- */
+@media (max-width: 768px) {
+  .formulario-inputs input {
+    font-size: clamp(10px, 2.8vw, 14px);
+    padding: 2px 0;
   }
-}
-
-/* --- MOBILE  --- */
-@media (max-width: 360px) {
-  .formulario-inputs {
-    width: 30%; 
-  }
-  .formulario-inputs input { 
-    width: 100%;
-    font-size: 0.5rem;  
-    padding: 1% 0; 
-  }
+  
   .carta-container {
-    width: min(100%, 1000px); 
+    width: min(95%, 1000px);
   }
+
   .bloco-contatos-rodape {
     grid-template-columns: 1fr;
     row-gap: 15px;
   }
-}
 
-/* --- TABLET E MOBILE (HEADER) --- */
-@media (max-width: 768px) {
   .cabecalho-oferta h1 {
     font-size: 1.7rem;
   }
@@ -1655,8 +1637,11 @@ a {
 .titulo-vazado {
   font-family: "League Spartan", sans-serif;
   font-size: 3rem;
-  color: transparent; /* Deixa o preenchimento da letra invisível */
-  -webkit-text-stroke: 1.5px #d63031; /* Aplica a borda vermelha */
+  background: linear-gradient(to right, #FF0000, #FFFF07, #2BFF00, #1A38FF, #850099);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 1.5px transparent;
+  -webkit-text-fill-color: #121212;
   margin-bottom: var(--espacamento-md);
   text-transform: uppercase; /* Garante que ficará tudo em maiúsculo */
 }

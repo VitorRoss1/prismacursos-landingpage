@@ -51,9 +51,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (stepId === "result") {
         globalProgress.style.opacity = "0";
         globalProgress.style.visibility = "hidden";
+        globalProgress.style.display = "none";
       } else {
         globalProgress.style.opacity = "1";
         globalProgress.style.visibility = "visible";
+        globalProgress.style.display = "";
         globalProgress.setAttribute("data-step", stepId);
         
         let widthVal = "33.3%";
