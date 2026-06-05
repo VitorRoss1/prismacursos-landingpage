@@ -108,15 +108,18 @@ graph TD
     B --> C["✏️ Editar arquivos"]
     C --> D["💾 git add . + git commit"]
     D --> E["🚀 git push origin feature/..."]
-    E --> F["🔃 Abrir Pull Request no GitHub"]
-    F --> G["👀 Revisão de alguém do grupo"]
-    G --> H["✅ Merge na main"]
+    E --> F{"Como integrar?"}
+    F -->|"Opção 1"| G["🔃 Abrir Pull Request no GitHub"]
+    F -->|"Opção 2"| H["💬 Avisar o responsável pelos merges"]
+    G --> I["✅ Merge na main"]
+    H --> I
 ```
 
 1. Faça `push` da sua branch
-2. Vá no GitHub → **Compare & pull request**
-3. Descreva o que fez
-4. Peça revisão de alguém do grupo
+2. Escolha uma das opções:
+   - **Opção 1 — Pull Request:** Vá no GitHub → **Compare & pull request**, descreva o que fez e peça revisão
+   - **Opção 2 — Aviso direto:** Avise no grupo quem está responsável pelos merges que a sua branch está pronta
+3. Aguarde o merge na `main`
 
 > ⚠️ **Nunca dê commit direto na `main`!** Sempre use branches.
 
@@ -154,11 +157,45 @@ cd css/scss
 
 ## 👥 Equipe
 
-| Nome | GitHub |
-|------|--------|
-| Eduardo Lobo Moreira | [EduLoboM](https://github.com/EduLoboM) |
-| Júlia Trevizolo | [JuliaTrevizolo](https://github.com/JuliaTrevizolo) |
-| Lucas Oliveira de Paula | [dev-LucasDpaula](https://github.com/dev-LucasDpaula) |
-| Mariane | [marianeb08](https://github.com/marianeb08) |
-| Pedro dos Santos | [pedrossantoss](https://github.com/pedrossantoss) |
-| Vitor Rossi | [VitorRoss1](https://github.com/VitorRoss1) |
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/EduLoboM">
+        <img src="https://github.com/EduLoboM.png" width="100px;" alt="Eduardo Lobo Moreira"/><br />
+        <sub><b>Eduardo Lobo Moreira</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/JuliaTrevizolo">
+        <img src="https://github.com/JuliaTrevizolo.png" width="100px;" alt="Júlia Trevizolo"/><br />
+        <sub><b>Júlia Trevizolo</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/dev-LucasDpaula">
+        <img src="https://github.com/dev-LucasDpaula.png" width="100px;" alt="Lucas Oliveira de Paula"/><br />
+        <sub><b>Lucas Oliveira de Paula</b></sub>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/marianeb08">
+        <img src="https://github.com/marianeb08.png" width="100px;" alt="Mariane"/><br />
+        <sub><b>Mariane</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/pedrossantoss">
+        <img src="https://github.com/pedrossantoss.png" width="100px;" alt="Pedro dos Santos"/><br />
+        <sub><b>Pedro dos Santos</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/VitorRoss1">
+        <img src="https://github.com/VitorRoss1.png" width="100px;" alt="Vitor Rossi"/><br />
+        <sub><b>Vitor Rossi</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
