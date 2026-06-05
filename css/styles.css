@@ -1233,13 +1233,13 @@ a {
 
 .porcentagem {
   font-family: 'Inter', sans-serif;
-  font-size: 1.6rem; /* rem ~=16px */
+  font-size: clamp(0.7rem, 2.5vw, 1.6rem);
   font-weight: bold;
   line-height: 1;
 }
 .texto-off {
   font-family: 'Inter', sans-serif;
-  font-size: 1rem;
+  font-size: clamp(0.5rem, 1.5vw, 1rem);
   text-transform: uppercase;
   margin-top: 2px;
   font-weight: bold;
@@ -1401,27 +1401,10 @@ a {
     font-size: 1rem;  
     padding: 1% 0; 
   }
-  .porcentagem {
-    font-size: 2rem; /* rem ~=16px */
-  }
-  .texto-off {
-    font-size: 1rem;
-  }
-  .formulario-inputs input { 
-    width: 100%;
-    font-size: 1rem;  
-    padding: 1% 0; 
-  }
 }
 
 /* --- MOBILE  --- */
 @media (max-width: 360px) {
-  .porcentagem {
-    font-size: 0.80rem; 
-  }
-  .texto-off {
-    font-size: 0.7rem;
-  }
   .formulario-inputs {
     width: 30%; 
   }
@@ -1434,8 +1417,8 @@ a {
     width: min(100%, 1000px); 
   }
   .bloco-contatos-rodape {
-    grid-template-columns: 1fr; /* 1 única coluna ocupando todo o espaço */
-    row-gap: 15px; /* Ajusta o espaço entre as linhas */
+    grid-template-columns: 1fr;
+    row-gap: 15px;
   }
 }
 
