@@ -156,7 +156,9 @@ cd css/scss
 
 | Nome | GitHub |
 |------|--------|
-|  |  |
-|  |  |
-|  |  |
-|  |  |
+| Eduardo Lobo Moreira | [EduLoboM](https://github.com/EduLoboM) |
+| Júlia Trevizolo | [JuliaTrevizolo](https://github.com/JuliaTrevizolo) |
+| Lucas Oliveira de Paula | [dev-LucasDpaula](https://github.com/dev-LucasDpaula) |
+| Mariane | [marianeb08](https://github.com/marianeb08) |
+| Pedro dos Santos | [pedrossantoss](https://github.com/pedrossantoss) |
+| Vitor Rossi | [VitorRoss1](https://github.com/VitorRoss1) |
