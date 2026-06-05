@@ -245,7 +245,4 @@ Garante a integridade e consistência das informações enviadas pelo formulári
       <td><b>Celular</b></td>
       <td>Deve conter uma sequência numérica estrita de <b>10 ou 11 dígitos</b> (qualquer caractere não numérico, como parênteses ou traços, é ignorado na contagem).</td>
     </tr>
-    <td><b>Curso</b></td>
-      <td>Deve conter um dos cursos predefinidos no array <code>cursosValidos</code> </b></td>
-  </tbody>
 </table>
