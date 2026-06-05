@@ -9,13 +9,16 @@
 ```
 PrismaCursos/
 ├── index.html          ← Página principal (abra no navegador)
+├── confirmation.html   ← Página secundária (exibe confirmação)
 ├── css/
-│   ├── styles.css      ← Estilos (edite aqui)
+│   ├── styles.css      ← Estilos 
 │   └── scss/           ← Opcional: para quem quiser usar SCSS
 │       ├── styles.scss
 │       └── compilar-scss.sh
 ├── js/
-│   └── main.js         ← JavaScript
+│   └── cursos.js         ← JavaScript
+│   └── main.js
+│   └── quiz.js
 ├── assets/             ← Imagens e recursos
 └── .gitignore
 ```
