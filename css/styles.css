@@ -1438,13 +1438,6 @@ a {
 
 /* --- TABLET E MOBILE (HEADER) --- */
 @media (max-width: 768px) {
-  #navbar {
-    flex-direction: column;
-    text-align: center;
-  }
-  .nav-links {
-    gap: 15px;
-  }
   .cabecalho-oferta h1 {
     font-size: 1.7rem;
   }
