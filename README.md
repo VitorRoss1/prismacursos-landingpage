@@ -157,7 +157,7 @@ cd css/scss
 
 ## 👥 Equipe
 
-<table>
+<table align="center">
   <tr>
     <td align="center">
       <a href="https://github.com/EduLoboM">
@@ -202,23 +202,48 @@ cd css/scss
 
 ---
 
-### 🏷️ Sistema de Desconto Progressivo (Gamificação 2)
-Para incentivar a exploração da página e aumentar o engajamento do usuário, foi implementada uma mecânica de desconto dinâmico via JavaScript:
-* **Gatilho de Ativação:** O usuário ganha **+5% de desconto acumulado** ao clicar em seções-chave de engajamento na navegação:
-  * `Cursos`
-  * `Quem Somos`
-  * `Contato`
-* **Comportamento Visual:** A cada clique, o estado global da aplicação é atualizado, disparando uma transição suave no CSS que altera a cor de fundo do selo (triângulo de oferta) e atualiza o texto da porcentagem em tempo real.
+## 🎯 Quiz de Escolha de Curso (Gamificação 1)
+Para auxiliar o usuário a descobrir qual curso se alinha melhor com seu perfil e interesses, foi implementado um questionário interativo e dinâmico:
+* **Fluxo de Navegação:** Composto por **3 perguntas consecutivas** (Nível de Experiência, Tempo Disponível e Área de Interesse), com transições suaves via JavaScript.
+* **Barra de Progresso:** Uma barra visual dinâmica indica o avanço do usuário ao longo das etapas (33.3%, 66.6% e 100%).
+* **Sistema de Recomendação:** Com base na resposta final sobre a área de preferência, a aplicação sugere um curso específico e exibe a imagem correspondente:
+  * 🖥️ **Tecnologia** ➡️ Recomendação do curso de **DevOps** (`assets/quiz/resultado-devops.png`).
+  * 🎨 **Design** ➡️ Recomendação do curso de **Design 3D** (`assets/quiz/resultado-design3d.png`).
+  * 📈 **Gestão** ➡️ Recomendação do curso de **Gestão Pessoal** (`assets/quiz/resultado-gestao.png`).
 
 ---
 
-### 🧪 Validação de Formulário 
-Garante a integridade e a qualidade dos dados coletados antes do envio do formulário de cadastro, aplicando regras rígidas de validação em JavaScript:
+## 🏷️ Sistema de Desconto Progressivo (Gamificação 2)
+Para incentivar a exploração das diferentes seções da página e aumentar o engajamento, criamos uma mecânica de acúmulo de desconto baseada nas interações do usuário:
+* **Gatilho de Ativação:** O usuário inicia com **5%** de desconto e ganha **+5% de desconto acumulado** a cada primeira visita/clique em links de navegação específicos:
+  * `Cursos`
+  * `Quem Somos`
+  * `Contato`
 
-| Campo | Regra de Validação | Objetivo do Critério |
-| :--- | :--- | :--- |
-| **E-mail** | Presença obrigatória dos caracteres `@` e `.` | Evita formatos de texto inválidos e garante a estrutura padrão de comunicação. |
-| **Celular** | String estritamente numérica com **10 ou 11 dígitos** | Valida o padrão nacional de telefonia (com DDD), aceitando tanto números fixos quanto celulares com o nono dígito. |
-| **Curso** | Verificação de correspondência (*Match*) em uma lista predefinida | Impede a inserção manual de dados corrompidos ou cursos inexistentes na plataforma, validando contra o array `cursosValidos`. |
+---
 
-> 💡 **Nota de UX:** Caso algum campo não cumpra os critérios acima, o envio do formulário é interceptado via `preventDefault()`,
+## 🧪 Validação de Formulário
+Garante a integridade e consistência das informações enviadas pelo formulário de cadastro através de validações em tempo real via JavaScript:
+
+<table align="center">
+  <thead>
+    <tr>
+      <th>Campo</th>
+      <th>Regra de Validação</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Todos os campos</b></td>
+      <td>Preenchimento obrigatório (Nome, E-mail, Celular, Curso, Assunto).</td>
+    </tr>
+    <tr>
+      <td><b>E-mail</b></td>
+      <td>Presença obrigatória de formato válido contendo os caracteres <code>@</code> e <code>.</code></td>
+    </tr>
+    <tr>
+      <td><b>Celular</b></td>
+      <td>Deve conter uma sequência numérica estrita de <b>10 ou 11 dígitos</b> (qualquer caractere não numérico, como parênteses ou traços, é ignorado na contagem).</td>
+    </tr>
+  </tbody>
+</table>
