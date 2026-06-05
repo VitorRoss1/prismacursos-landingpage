@@ -219,6 +219,6 @@ Garante a integridade e a qualidade dos dados coletados antes do envio do formul
 | :--- | :--- | :--- |
 | **E-mail** | Presença obrigatória dos caracteres `@` e `.` | Evita formatos de texto inválidos e garante a estrutura padrão de comunicação. |
 | **Celular** | String estritamente numérica com **10 ou 11 dígitos** | Valida o padrão nacional de telefonia (com DDD), aceitando tanto números fixos quanto celulares com o nono dígito. |
-| **Curso** | Verificação de correspondência (*Match*) em uma lista predefinida | Impede a inserção manual de dados corrompidos ou cursos inexistentes na plataforma, validando contra a array oficial de ofertas. |
+| **Curso** | Verificação de correspondência (*Match*) em uma lista predefinida | Impede a inserção manual de dados corrompidos ou cursos inexistentes na plataforma, validando contra o array `cursosValidos`. |
 
-> 💡 **Nota de UX:** Caso algum campo não cumpra os critérios acima, o envio do formulário é interceptado via `preventDefault()`, e o sistema exibe alertas visuais intuitivos para que o usuário corrija as informações sem perder o progresso.
+> 💡 **Nota de UX:** Caso algum campo não cumpra os critérios acima, o envio do formulário é interceptado via `preventDefault()`,
