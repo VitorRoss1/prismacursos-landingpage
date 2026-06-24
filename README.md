@@ -118,45 +118,7 @@ graph TD
     H --> I
 ```
 
-1. Faça `push` da sua branch
-2. Escolha uma das opções:
-   - **Opção 1 — Pull Request:** Vá no GitHub → **Compare & pull request**, descreva o que fez e peça revisão
-   - **Opção 2 — Aviso direto:** Avise no grupo quem está responsável pelos merges que a sua branch está pronta
-3. Aguarde o merge na `main`
 
-> ⚠️ **Nunca dê commit direto na `main`!** Sempre use branches.
-
----
-
-## ✅ Dicas Rápidas
-
-- Commits **pequenos e frequentes** > um commit gigante
-- Use tags semânticas no HTML (`<header>`, `<main>`, `<section>`, `<footer>`)
-- Use as variáveis CSS do `:root` para cores e espaçamentos
-- Use `const` e `let` no JS, **nunca** `var`
-- **Comunique no grupo** o que está fazendo pra não duplicar trabalho
-
----
-
-## 🎨 SCSS (opcional)
-
-Se quiser usar SCSS ao invés de CSS puro, edite `css/scss/styles.scss` e compile:
-
-```bash
-# Instalar o compilador (uma vez só)
-sudo apt install sass          # Linux
-brew install sass/sass/sass    # Mac
-choco install sass             # Windows
-
-# Compilar
-cd css/scss
-./compilar-scss.sh             # compila uma vez
-./compilar-scss.sh --watch     # recompila automaticamente
-```
-
-> Se não quiser usar SCSS, ignore a pasta `css/scss/` e edite o `css/styles.css` direto.
-
----
 
 ## 👥 Equipe
 
